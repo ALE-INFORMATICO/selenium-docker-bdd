@@ -61,7 +61,7 @@ public class SearchSteps{
             host = System.getProperty("HUB_HOST");
         }
 
-        String completeUrl = "http://" + host + ":4444/wd/hub";
+        String completeUrl = "http://" + host + ":4444";
 
         /*System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver.exe");
         this.driver = new ChromeDriver();*/

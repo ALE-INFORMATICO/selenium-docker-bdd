@@ -63,13 +63,13 @@ public class SearchSteps{
 
         String completeUrl = "http://" + host + ":4444";
 
-        /*System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver.exe");
+        /*System.setProperty("webdriver.chrome.driver", "./src/test/resources/drivers/chromedriver.exe");
         this.driver = new ChromeDriver();*/
 
-        /*System.setProperty("webdriver.gecko.driver", "./src/test/resources/geckodriver.exe");
-        this.driver = new FirefoxDriver();*/
+        System.setProperty("webdriver.gecko.driver", "./src/test/resources/drivers/geckodriver.exe");
+        this.driver = new FirefoxDriver();
 
-        this.driver = new RemoteWebDriver(new URL(completeUrl), dc);
+        //this.driver = new RemoteWebDriver(new URL(completeUrl), dc);
     }
 
     @After

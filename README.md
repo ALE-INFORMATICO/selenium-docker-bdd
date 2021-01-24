@@ -11,6 +11,11 @@ Selenium Docker BDD con librerías actualizadas a 2021
 * [TestNG](https://testng.org/doc/)
 * [Docker Selenium](https://github.com/SeleniumHQ/docker-selenium)
 
+### Ejecución ###
+* Levantar selenium grid con docker-compose: docker-compose up --scale chrome=x --scale firefox=y
+* Empaquetar jar ejecutables: mvn clean package
+* Ejecutar pruebas en modo CLI con java: java -cp target/selenium-docker.jar:target/selenium-docker-tests.jar:target/lib/* io.cucumber.core.cli.Main src/test/resources --glue com.test.stepdefs
+
 ### DATOS PERSONALES ###
 
 * Alejandro Contreras | ale.innformatico@gmail.com

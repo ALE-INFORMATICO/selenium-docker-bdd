@@ -1,19 +1,14 @@
-#!/usr/bin/env bash
-# Environment Variables
-# HUB_HOST
-# BROWSER
-# MODULE
+#!/bin/bash
 
+echo "........................................................."
+echo "Chequeando si el HUB está listo para ejecutar las pruebas"
 echo "Checking if hub is ready - $HUB_HOST"
+echo "........................................................."
 
-while [ "$( curl -s http://$HUB_HOST:4444/wd/hub/status | jq -r .value.ready )" != "true" ]
+while [ "$(curl -s http://$HUB_HOST:4444/status | jq -r .value.nodes[0].availability)" != "UP" ]
 do
-	sleep 1
+        sleep 1
 done
 
 # start the java command
-java -cp selenium-docker.jar:selenium-docker-tests.jar:libs/* \
-    -DHUB_HOST=$HUB_HOST \
-    -DBROWSER=$BROWSER \
-    -Dcucumber.options="$CUCUMBER_OPTIONS" \
-    org.testng.TestNG -testclass com.runner.TestRunner
+java -cp selenium-docker.jar:selenium-docker-tests.jar:classes/*:test-classes/*:lib/* io.cucumber.core.cli.Main

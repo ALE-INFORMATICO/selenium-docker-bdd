@@ -16,4 +16,4 @@ do
 done
 
 # start the java command
-java -cp selenium-docker-bdd.jar:selenium-docker-bdd-tests.jar:classes/:test-classes/:libs/* io.cucumber.core.cli.Main
+java -cp selenium-docker-bdd.jar:selenium-docker-bdd-tests.jar:classes/:test-classes/:libs/* io.cucumber.core.cli.Main features/ stepdefs/

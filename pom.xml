@@ -46,7 +46,7 @@
 
     <build>
 
-        <finalName>selenium-docker</finalName>
+        <finalName>selenium-docker-bdd</finalName>
 
         <plugins>
 

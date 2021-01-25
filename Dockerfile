@@ -6,7 +6,7 @@ RUN apk add curl jq
 WORKDIR /usr/share/udemy
 
 # ADD .jar under target from host into this image
-ADD target/selenium-docker-bdd selenium-docker-bdd
+ADD target/selenium-docker-bdd.jar selenium-docker-bdd.jar
 ADD target/selenium-docker-bdd-tests.jar selenium-docker-bdd-tests.jar
 ADD target/classes/ classes/
 ADD target/test-classes/ test-classes/

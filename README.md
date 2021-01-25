@@ -15,7 +15,7 @@ Selenium Docker BDD con librerías actualizadas a 2021
 * Levantar selenium grid con docker-compose: docker-compose up -d --scale chrome=x --scale firefox=y
 * Empaquetar jar ejecutables y dependencias: mvn clean package
 * Copiar jars de src y test, librerias (en carpeta lib/*), y clases compiladas de src y test para luego pasarlos al classpath y ejecutarlo con java CLI.
-* Ejecutar pruebas en modo CLI con java: java -cp selenium-docker.jar:selenium-docker-tests.jar:classes/:test-classes/:lib/* io.cucumber.core.cli.Main
+* Ejecutar pruebas en modo CLI con java: java -cp selenium-docker-bdd.jar:selenium-docker-bdd-tests.jar:classes/:test-classes/:libs/* -DHUB_HOST=$HUB_HOST io.cucumber.core.cli.Main
 * Para bajar selenium grid: docker-compose down | docker-compose down -v (si también queremos eliminar volumen)
 
 ### DATOS PERSONALES ###

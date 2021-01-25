@@ -11,6 +11,7 @@ ADD target/selenium-docker-bdd-tests.jar selenium-docker-bdd-tests.jar
 ADD target/classes/ classes/
 ADD target/test-classes/ test-classes/
 ADD target/libs/ libs/
+ADD src/test/resources/features features/
 ADD healthcheck.sh healthcheck.sh
 
 ENTRYPOINT sh healthcheck.sh

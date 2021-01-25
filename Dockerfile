@@ -6,11 +6,11 @@ RUN apk add curl jq
 WORKDIR /usr/share/udemy
 
 # ADD .jar under target from host into this image
-ADD target/selenium-docker.jar 			selenium-docker.jar
-ADD target/selenium-docker-tests.jar 	selenium-docker-tests.jar
-ADD target/classes                      classes
-ADD target/test-classes                 test-classes
-ADD target/libs							libs
-ADD healthcheck.sh                      healthcheck.sh
+ADD target/selenium-docker-bdd.jar	        selenium-docker-bdd.jar
+ADD target/selenium-docker-bdd-tests.jar 	selenium-docker-bdd-tests.jar
+ADD target/classes                          classes
+ADD target/test-classes                     test-classes
+ADD target/libs							    libs
+ADD healthcheck.sh                          healthcheck.sh
 
 ENTRYPOINT sh healthcheck.sh

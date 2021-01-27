@@ -21,7 +21,7 @@ pipeline {
                                     [key: 'Commit', value: '<a href="${GERRIT_CHANGE_URL}">${GERRIT_PATCHSET_REVISION}</a>'],
                                     [key: 'Submitter', value: '${GERRIT_PATCHSET_UPLOADER_NAME}']
                             ],
-                            reportTitle: 'My report',
+                            reportTitle: 'Reporte Proyecto Selenium BDD',
                             jsonReportDirectory: 'target/cucumber-reports/json-reports/',
                             fileIncludePattern: '**/*.json',
                             sortingMethod: 'ALPHABETICAL',

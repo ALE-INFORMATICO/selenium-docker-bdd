@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                sh 'mvn test' 
+                sh 'mvn test -DHUB_HOST=162.222.178.134' 
             }
             post {
                 always {

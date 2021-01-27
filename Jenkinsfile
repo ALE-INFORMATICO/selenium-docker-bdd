@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Test') { 
             steps {
-                sh 'mvn test -DHUB_HOST=162.222.178.134' 
+                sh 'mvn clean test -DHUB_HOST=162.222.178.134' 
             }
             post {
                 always {

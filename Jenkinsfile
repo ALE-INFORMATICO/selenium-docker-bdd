@@ -7,6 +7,9 @@ pipeline {
     }
     stages {
         stage("Start Grid"){
+            node {
+                label 'master'
+            }
             steps{
                 sh 'ls -al'
                 sh 'docker-compose --version'

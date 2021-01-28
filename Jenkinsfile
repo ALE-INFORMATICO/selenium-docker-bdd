@@ -6,6 +6,11 @@ pipeline {
         }
     }
     stages {
+        stage("Docker-Compose UP"){
+			steps{
+				sh "docker-compose up -d --scale chrome=2 --scale firefox=2"
+			}
+		}
         stage('Test') { 
             steps {
                 sh 'mvn clean test -DHUB_HOST=162.222.178.134' 

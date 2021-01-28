@@ -95,7 +95,3 @@ services:
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
     ports:
       - "7100-7110:5900"
-networks:
-    default:
-        external:
-            name: jenkins

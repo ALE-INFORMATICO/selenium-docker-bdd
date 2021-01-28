@@ -10,7 +10,7 @@ pipeline {
              agent none
              steps{
                 sh 'ls -al'
-                sh "cat docker-compose.yml"
+                sh 'cat docker-compose.yml'
              }
         }
         stage('Test') {

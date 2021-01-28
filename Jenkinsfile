@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent none
     stages {
         stage('Build Jar') {
             agent {
@@ -19,7 +19,7 @@ pipeline {
                 }
             }
         }
-        stage('Build Jar') {
+        stage('Build Jar 2') {
             agent {
                 docker {
                     image 'alejandrocontreras/seleniumdockerbdd'

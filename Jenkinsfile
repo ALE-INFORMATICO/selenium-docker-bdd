@@ -9,7 +9,7 @@ pipeline {
         stage("Start Grid"){
              steps{
                 sh 'ls -al'
-                sh ' whereis docker-compose'
+                sh 'whereis docker-compose'
                 sh 'docker-compose up -d'
              }
         }

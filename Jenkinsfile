@@ -53,7 +53,7 @@ pipeline {
     }
     post{
         always{
-            sh "docker-compose down -v"
+            sh "docker-compose down"
             cucumber buildStatus: 'UNSTABLE',
                             failedFeaturesNumber: 1,
                             failedScenariosNumber: 1,

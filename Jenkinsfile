@@ -6,6 +6,12 @@ pipeline {
         }
     }
     stages {
+        stage("Start Grid"){
+             agent none
+             steps{
+                sh "docker-compose up -d"
+             }
+        }
         stage('Test') {
             steps {
                 sh 'mvn clean test -DHUB_HOST=162.222.178.134'

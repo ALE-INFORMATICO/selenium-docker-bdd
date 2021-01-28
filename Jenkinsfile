@@ -7,7 +7,7 @@ pipeline {
     }
     stages {
         stage("Start Grid"){
-            agent any
+            agent none
             steps{
                 sh 'ls -al'
                 sh 'docker-compose --version'

@@ -7,8 +7,10 @@ pipeline {
     }
     stages {
         stage("Start Grid"){
-            node {
-                label 'master'
+            agent {
+                node {
+                    label 'master'
+                }
             }
             steps{
                 sh 'ls -al'

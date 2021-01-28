@@ -9,7 +9,7 @@ pipeline {
         stage("Start Grid"){
              steps{
                 sh 'ls -al'
-                sh '/usr/local/bin/docker-compose docker-compose --version'
+                sh '/usr/local/bin/docker-compose --version'
              }
         }
         stage('Test') {

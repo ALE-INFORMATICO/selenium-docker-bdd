@@ -9,7 +9,7 @@ pipeline {
         stage("Start Grid"){
              agent none
              steps{
-                echo 'ls -al'
+                sh 'echo "ls -al"'
                 sh "docker-compose up -d"
              }
         }

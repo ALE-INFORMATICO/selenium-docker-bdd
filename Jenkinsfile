@@ -19,7 +19,7 @@ pipeline {
                 }
             }
         }
-        stage('Push Image') {
+        /*stage('Push Image') {
             steps {
                 script {
 			        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
@@ -33,7 +33,7 @@ pipeline {
         	steps{
         	    sh "docker pull alejandrocontreras/dockerbdd"
         	}
-        }
+        }*/
         stage("Start Grid") {
         	steps{
         	    sh "docker-compose up -d"

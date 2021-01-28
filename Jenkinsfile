@@ -7,10 +7,10 @@ pipeline {
     }
     stages {
         stage("Start Grid"){
-             agent none
              steps{
                 sh 'ls -al'
                 sh 'cat docker-compose.yml'
+                sh 'docker-compose up -d'
              }
         }
         stage('Test') {

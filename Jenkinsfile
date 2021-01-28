@@ -18,8 +18,13 @@ pipeline {
                 }
             }
         }
-        stage("Docker-Compose UP"){
-            steps{
+        stage('Docker-Compose') {
+            agent {
+                docker {
+                    image 'alejandrocontreras/seleniumdockerbdd:latest'
+                }
+            }
+            steps {
                 sh "docker-compose up -d --scale chrome=2 --scale firefox=2"
             }
         }

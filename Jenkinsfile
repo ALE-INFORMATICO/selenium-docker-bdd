@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent none
     stages {
         stage('Build Jar') {
             agent {
@@ -54,6 +54,16 @@ pipeline {
     post{
         always{
             sh "docker-compose down -v"
+            cucumber buildStatus: 'UNSTABLE',
+                            failedFeaturesNumber: 1,
+                            failedScenariosNumber: 1,
+                            skippedStepsNumber: 1,
+                            failedStepsNumber: 1,
+                            reportTitle: 'My report',
+                            jsonReportDirectory: 'target/cucumber-reports/json-reports/',
+                            fileIncludePattern: '**/*.json',
+                            sortingMethod: 'ALPHABETICAL',
+                            trendsLimit: 100
         }
     }
 }

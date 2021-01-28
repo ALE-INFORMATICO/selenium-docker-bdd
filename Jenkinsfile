@@ -19,11 +19,10 @@ pipeline {
                 }
             }
         }
-	stage("Docker-Compose UP"){
-			steps{
-				sh "docker-compose up -d --scale chrome=2 --scale firefox=2"
-			}
-		}
-	   
+        stage("Docker-Compose UP"){
+            steps{
+                sh "docker-compose up -d --scale chrome=2 --scale firefox=2"
+            }
+        }
     }
 }

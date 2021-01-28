@@ -12,5 +12,6 @@ ADD target/classes/ classes/
 ADD target/test-classes/ test-classes/
 ADD target/libs/ libs/
 ADD healthcheck.sh healthcheck.sh
+ADD docker-compose.yml docker-compose.yml
 
 ENTRYPOINT sh healthcheck.sh

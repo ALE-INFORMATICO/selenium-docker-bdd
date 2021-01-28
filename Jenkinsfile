@@ -45,11 +45,10 @@ pipeline {
         		sleep 10
         	}
         }
-        	stage("Run Test") {
-        		steps{
-        			sh "docker run -e HUB_HOST=162.222.178.134 alejandrocontreras/dockerbdd"
-        		}
-            }
+        stage("Run Test") {
+        	steps{
+        		sh "docker run -e HUB_HOST=162.222.178.134 alejandrocontreras/dockerbdd"
+        	}
         }
         post{
             always{

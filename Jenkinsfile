@@ -50,10 +50,10 @@ pipeline {
         		sh "docker run -e HUB_HOST=162.222.178.134 alejandrocontreras/dockerbdd"
         	}
         }
-        post{
-            always{
-        		sh "docker-compose down -v"
-        	}
+    }
+    post{
+        always{
+            sh "docker-compose down -v"
         }
     }
 }

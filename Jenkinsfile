@@ -1,34 +1,28 @@
 pipeline {
-    agent none
+    agent {
+        docker {
+            image 'maven:3-alpine'
+            args '-v /root/.m2:/root/.m2'
+        }
+    }
     stages {
-        stage('Build Jar') {
-            agent {
-                docker {
-                    image 'maven:3-alpine'
-                    args '-v /root/.m2:/root/.m2'
-                }
-            }
+        stage('Test') {
             steps {
-                sh 'mvn clean package -DskipTests'
+                sh 'mvn clean test -DHUB_HOST=162.222.178.134'
             }
-        }
-        stage('Build Image') {
-            steps {
-                script {
-                	app = docker.build("alejandrocontreras/seleniumdockerbdd")
+            post {
+                always {
+                    cucumber buildStatus: 'UNSTABLE',
+                            failedFeaturesNumber: 1,
+                            failedScenariosNumber: 1,
+                            skippedStepsNumber: 1,
+                            failedStepsNumber: 1,
+                            reportTitle: 'My report',
+                            jsonReportDirectory: 'target/cucumber-reports/json-reports/',
+                            fileIncludePattern: '**/*.json',
+                            sortingMethod: 'ALPHABETICAL',
+                            trendsLimit: 100
                 }
-            }
-        }
-        stage('Build Jar 2') {
-            agent {
-                docker {
-                    image 'alejandrocontreras/seleniumdockerbdd'
-                }
-            }
-            steps {
-                sh 'docker run -it --entrypoint /bin/bash alejandrocontreras/seleniumdockerbdd'
-                sh 'ls -al'
-                sh 'docker-compose up -d --scale chrome=2 --scale firefox=2'
             }
         }
     }

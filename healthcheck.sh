@@ -7,7 +7,7 @@ echo "........................................................."
 
 while [ "$(curl -s http://$HUB_HOST:4444/status | jq -r .value.nodes[0].availability)" != "UP" ]
 do
-        sleep 10
+        sleep 3
 done
 
 # start the java command

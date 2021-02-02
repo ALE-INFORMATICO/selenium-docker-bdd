@@ -1,6 +1,8 @@
 #!/bin/bash
 
 echo "........................................................."
+echo "...............R I P L E Y    T E C H ..................."
+echo "........................................................."
 echo "Chequeando si el HUB está listo para ejecutar las pruebas"
 echo "IP del hub es -> $HUB_HOST"
 echo "........................................................."

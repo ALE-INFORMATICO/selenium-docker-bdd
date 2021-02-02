@@ -11,4 +11,4 @@ do
 done
 
 # start the java command
-java -cp selenium-docker-bdd.jar:selenium-docker-bdd-tests.jar:classes/:test-classes/:libs/* -DHUB_HOST=$HUB_HOST io.cucumber.core.cli.Main --plugin json:./reporte/report.json
+java -cp selenium-docker-bdd.jar:selenium-docker-bdd-tests.jar:classes/:test-classes/:libs/* -DHUB_HOST=$HUB_HOST io.cucumber.core.cli.Main --plugin json:./report.json
